@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.7.RELEASE'
+	id 'java'
+	id 'application'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.bola'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+application {
+    mainClassName = 'com.bola.chat.ChatApplication'
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.10'
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    	implementation 'org.springframework.boot:spring-boot-starter-reactor-netty'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
